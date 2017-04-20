@@ -14,7 +14,6 @@ game.PlayScreen = me.ScreenObject.extend({
       me.input.bindKey(me.input.KEY.RIGHT, "right");
       me.input.bindKey(me.input.KEY.A, "left");
       me.input.bindKey(me.input.KEY.D, "right");
-	  me.input.bindKey(me.input.KEY.SPACE, "shoot", true);
   },
 
   /**
