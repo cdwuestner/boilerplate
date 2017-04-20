@@ -6,10 +6,16 @@ game.Enemy = me.Entity.extend({
           height : 32
       }]);
 	  this.chooseShipImage();
+	  
+	  this.body.setVelocity(0, 0);
+	  this.body.collisionType = me.collision.types.ENEMY_OBJECT;
   },
 
-  update: function (dt) {
-      this._super(me.Entity, "update", [dt]);
+  update: function (time) {
+      this._super(me.Entity, "update", [time]);
+	  
+	  this.body.update();
+	  
       return true;
   },
   
