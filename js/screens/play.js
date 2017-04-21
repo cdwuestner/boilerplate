@@ -2,10 +2,18 @@ game.PlayScreen = me.ScreenObject.extend({
   /**
    * action to perform on state change
    */
+   checkIfLoss : function (y) {
+	   if (y >= this.player.pos.y) {
+		   this.reset();
+	   }
+   },
+   
   onResetEvent : function () {
       me.game.world.addChild(new me.ColorLayer("background", "#000000"), 0);
-      me.game.world.addChild(me.pool.pull("player"), 1);
-
+	  
+	  this.player = me.pool.pull("player");
+	  me.game.world.addChild(this.player, 1);
+	  
 	  this.enemyManager = new game.EnemyManager();
 	  this.enemyManager.createEnemies();
 	  me.game.world.addChild(this.enemyManager, 2);

@@ -32,6 +32,7 @@ game.EnemyManager = me.Container.extend({
 			   } else {
 				   _this.vel -= 5;
 			   }
+			   game.playScreen.checkIfLoss(bounds.bottom);
 		   } else {
 			   _this.pos.x += _this.vel;
 		   }
